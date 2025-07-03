@@ -99,30 +99,34 @@ window.Quarto = {
 </header>
 
 
-<p>Attitudes toward immigration are an increasingly important part of US congressional elections. Using data from a experiment among Boston commuters, we aim to explore the causal effect of exposure to Spanish speakers on attitudes toward immigration among registered voters in Georgia today. A potential weakness in our model is that the data is based off of Boston commuters, but our target population is all registered voters, not just those who commute by train. Thus, there is a lack of representativeness between our data and the population. We model attitudes toward immigration based on the treatment of exposure to Spanish-speaking individuals as a linear function of their non-treated attitudes. Our quantity of interest was the causal effect of attitude towards immigration between the treatment of exposure to Spanish-speakers and no exposure, and our model predicted the causal effect to be 1.55. Our 95% confidence interval for this value was between 0.51 and 2.58. The quantity of interest and its uncertainty could be wrong because the data we have is about attitude toward immigration, but it does not 100% correlate with voting behavior. Thus, the causal effect could actually not matter for our true purpose with this study.</p>
+<section id="mathematical-models" class="level2">
+<h2 class="anchored" data-anchor-id="mathematical-models">Mathematical Models</h2>
 <p><span class="math display">\[Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_n X_n + \epsilon\]</span></p>
 <p><span class="math display">\[
 \widehat{\text{att\_end}} = 8.45 + 1.55 \cdot \text{treatment}_{\text{Treated}}
 \]</span></p>
+</section>
+<section id="table" class="level2">
+<h2 class="anchored" data-anchor-id="table">Table</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="xfgtokkzfs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xfgtokkzfs table {
+<div id="ckzpiauzpx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ckzpiauzpx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xfgtokkzfs thead, #xfgtokkzfs tbody, #xfgtokkzfs tfoot, #xfgtokkzfs tr, #xfgtokkzfs td, #xfgtokkzfs th {
+#ckzpiauzpx thead, #ckzpiauzpx tbody, #ckzpiauzpx tfoot, #ckzpiauzpx tr, #ckzpiauzpx td, #ckzpiauzpx th {
   border-style: none;
 }
 
-#xfgtokkzfs p {
+#ckzpiauzpx p {
   margin: 0;
   padding: 0;
 }
 
-#xfgtokkzfs .gt_table {
+#ckzpiauzpx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -148,12 +152,12 @@ window.Quarto = {
   border-left-color: #D3D3D3;
 }
 
-#xfgtokkzfs .gt_caption {
+#ckzpiauzpx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xfgtokkzfs .gt_title {
+#ckzpiauzpx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -165,7 +169,7 @@ window.Quarto = {
   border-bottom-width: 0;
 }
 
-#xfgtokkzfs .gt_subtitle {
+#ckzpiauzpx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -177,7 +181,7 @@ window.Quarto = {
   border-top-width: 0;
 }
 
-#xfgtokkzfs .gt_heading {
+#ckzpiauzpx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -189,13 +193,13 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#xfgtokkzfs .gt_bottom_border {
+#ckzpiauzpx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xfgtokkzfs .gt_col_headings {
+#ckzpiauzpx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -210,7 +214,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#xfgtokkzfs .gt_col_heading {
+#ckzpiauzpx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -230,7 +234,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#xfgtokkzfs .gt_column_spanner_outer {
+#ckzpiauzpx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -242,15 +246,15 @@ window.Quarto = {
   padding-right: 4px;
 }
 
-#xfgtokkzfs .gt_column_spanner_outer:first-child {
+#ckzpiauzpx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xfgtokkzfs .gt_column_spanner_outer:last-child {
+#ckzpiauzpx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xfgtokkzfs .gt_column_spanner {
+#ckzpiauzpx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -262,11 +266,11 @@ window.Quarto = {
   width: 100%;
 }
 
-#xfgtokkzfs .gt_spanner_row {
+#ckzpiauzpx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xfgtokkzfs .gt_group_heading {
+#ckzpiauzpx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -292,7 +296,7 @@ window.Quarto = {
   text-align: left;
 }
 
-#xfgtokkzfs .gt_empty_group_heading {
+#ckzpiauzpx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -307,15 +311,15 @@ window.Quarto = {
   vertical-align: middle;
 }
 
-#xfgtokkzfs .gt_from_md > :first-child {
+#ckzpiauzpx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xfgtokkzfs .gt_from_md > :last-child {
+#ckzpiauzpx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xfgtokkzfs .gt_row {
+#ckzpiauzpx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -334,7 +338,7 @@ window.Quarto = {
   overflow-x: hidden;
 }
 
-#xfgtokkzfs .gt_stub {
+#ckzpiauzpx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -347,7 +351,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#xfgtokkzfs .gt_stub_row_group {
+#ckzpiauzpx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -361,15 +365,15 @@ window.Quarto = {
   vertical-align: top;
 }
 
-#xfgtokkzfs .gt_row_group_first td {
+#ckzpiauzpx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xfgtokkzfs .gt_row_group_first th {
+#ckzpiauzpx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xfgtokkzfs .gt_summary_row {
+#ckzpiauzpx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -379,16 +383,16 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#xfgtokkzfs .gt_first_summary_row {
+#ckzpiauzpx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xfgtokkzfs .gt_first_summary_row.thick {
+#ckzpiauzpx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xfgtokkzfs .gt_last_summary_row {
+#ckzpiauzpx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -398,7 +402,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#xfgtokkzfs .gt_grand_summary_row {
+#ckzpiauzpx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -408,7 +412,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#xfgtokkzfs .gt_first_grand_summary_row {
+#ckzpiauzpx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -418,7 +422,7 @@ window.Quarto = {
   border-top-color: #D3D3D3;
 }
 
-#xfgtokkzfs .gt_last_grand_summary_row_top {
+#ckzpiauzpx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -428,11 +432,11 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#xfgtokkzfs .gt_striped {
+#ckzpiauzpx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xfgtokkzfs .gt_table_body {
+#ckzpiauzpx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -441,7 +445,7 @@ window.Quarto = {
   border-bottom-color: #D3D3D3;
 }
 
-#xfgtokkzfs .gt_footnotes {
+#ckzpiauzpx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -455,7 +459,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#xfgtokkzfs .gt_footnote {
+#ckzpiauzpx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -464,7 +468,7 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#xfgtokkzfs .gt_sourcenotes {
+#ckzpiauzpx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -478,7 +482,7 @@ window.Quarto = {
   border-right-color: #D3D3D3;
 }
 
-#xfgtokkzfs .gt_sourcenote {
+#ckzpiauzpx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -486,72 +490,72 @@ window.Quarto = {
   padding-right: 5px;
 }
 
-#xfgtokkzfs .gt_left {
+#ckzpiauzpx .gt_left {
   text-align: left;
 }
 
-#xfgtokkzfs .gt_center {
+#ckzpiauzpx .gt_center {
   text-align: center;
 }
 
-#xfgtokkzfs .gt_right {
+#ckzpiauzpx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xfgtokkzfs .gt_font_normal {
+#ckzpiauzpx .gt_font_normal {
   font-weight: normal;
 }
 
-#xfgtokkzfs .gt_font_bold {
+#ckzpiauzpx .gt_font_bold {
   font-weight: bold;
 }
 
-#xfgtokkzfs .gt_font_italic {
+#ckzpiauzpx .gt_font_italic {
   font-style: italic;
 }
 
-#xfgtokkzfs .gt_super {
+#ckzpiauzpx .gt_super {
   font-size: 65%;
 }
 
-#xfgtokkzfs .gt_footnote_marks {
+#ckzpiauzpx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xfgtokkzfs .gt_asterisk {
+#ckzpiauzpx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xfgtokkzfs .gt_indent_1 {
+#ckzpiauzpx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xfgtokkzfs .gt_indent_2 {
+#ckzpiauzpx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xfgtokkzfs .gt_indent_3 {
+#ckzpiauzpx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xfgtokkzfs .gt_indent_4 {
+#ckzpiauzpx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xfgtokkzfs .gt_indent_5 {
+#ckzpiauzpx .gt_indent_5 {
   text-indent: 25px;
 }
 
-#xfgtokkzfs .katex-display {
+#ckzpiauzpx .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#xfgtokkzfs div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ckzpiauzpx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -593,6 +597,9 @@ window.Quarto = {
 </div>
 </div>
 </div>
+</section>
+<section id="plot" class="level2">
+<h2 class="anchored" data-anchor-id="plot">Plot</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -602,6 +609,11 @@ window.Quarto = {
 </div>
 </div>
 </div>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Attitudes toward immigration are an increasingly important part of US congressional elections. Using data from a experiment among Boston commuters, we aim to explore the causal effect of exposure to Spanish speakers on attitudes toward immigration among registered voters in Georgia today. A potential weakness in our model is that the data is based off of Boston commuters, but our target population is all registered voters, not just those who commute by train. Thus, there is a lack of representativeness between our data and the population. We model attitudes toward immigration based on the treatment of exposure to Spanish-speaking individuals as a linear function of their non-treated attitudes. Our quantity of interest was the causal effect of attitude towards immigration between the treatment of exposure to Spanish-speakers and no exposure, and our model predicted the causal effect to be 1.55. Our 95% confidence interval for this value was between 0.51 and 2.58. The quantity of interest and its uncertainty could be wrong because the data we have is about attitude toward immigration, but it does not 100% correlate with voting behavior. Thus, the causal effect could actually not matter for our true purpose with this study.</p>
+</section>
 
 </main>
 <!-- /main column -->
