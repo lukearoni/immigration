@@ -4,11 +4,15 @@ format: html
 author: Luke Li
 execute: 
   echo: false
+  warning: false
 ---
 
-Attitudes toward immigration are an increasingly important part of US congressional elections. Using data from a experiment among Boston commuters, we aim to explore the causal effect of exposure to Spanish speakers on attitudes toward immigration among registered voters in Georgia today. A potential weakness in our model is that the data is based off of Boston commuters, but our target population is all registered voters, not just those who commute by train. Thus, there is a lack of representativeness between our data and the population.
-
+## Mathematical Models
 $$Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_n X_n + \epsilon$$
+
+$$
+\widehat{\text{att\_end}} = 8.45 + 1.55 \cdot \text{treatment}_{\text{Treated}}
+$$
 
 ```{r}
 #| message: false
@@ -16,4 +20,88 @@ library(tidyverse)
 library(primer.data)
 library(tidymodels)
 library(broom)
+library(marginaleffects)
 ```
+
+```{r}
+#| cache: true
+fit_att <- linear_reg(engine = "lm") |> 
+fit(att_end ~ treatment, data = trains)
+```
+
+## Table
+```{r}
+library(tibble)
+library(gt)
+
+# Create the tibble
+df <- tibble(
+  term = c("(Intercept)", "Treatment (Treated)"),
+  estimate = c(8.45, 1.55),
+  std.error = c(0.347, 0.521),
+  statistic = c(24.3, 2.97),
+  p.value = c(9.18e-47, 3.67e-3),
+  conf.low = c(7.77, 0.514),
+  conf.high = c(9.14, 2.58)
+)
+
+# Create gt table
+df |>
+  select(term, estimate, conf.low, conf.high, p.value) |>
+  mutate(
+    estimate = round(estimate, 2),
+    conf.low = round(conf.low, 2),
+    conf.high = round(conf.high, 2),
+    p.value = signif(p.value, 2)
+  ) |>
+  gt() |>
+  cols_label(
+    term = "Term",
+    estimate = "Estimate",
+    conf.low = "Lower 95% CI",
+    conf.high = "Upper 95% CI",
+    p.value = "P-value"
+  ) |>
+  tab_header(
+    title = "Regression Results",
+    subtitle = "Effect of Treatment on Outcome"
+  ) |>
+  fmt_missing(everything(), missing_text = "–")
+```
+
+## Plot
+```{r}
+library(tidyverse)
+
+# Step 1: Create the data frame
+avg_df <- tibble(
+  comparison = "Treated - Control",
+  estimate = 1.55,
+  conf.low = 0.525,
+  conf.high = 2.57
+)
+
+# Step 2: Plot
+ggplot(avg_df, aes(x = comparison, y = estimate)) +
+  geom_point(size = 4, color = "#1f77b4") +
+  geom_errorbar(aes(ymin = conf.low, ymax = conf.high), width = 0.15, color = "#1f77b4") +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "gray60") +
+  labs(
+    title = "Estimated Effect of Treatment on Outcome",
+    subtitle = "Treated individuals had an average outcome 1.55 units higher than controls\n(95% CI: 0.53 to 2.57, p = 0.003)",
+    x = NULL,
+    y = "Average Treatment Effect",
+    caption = "Source: avg_comparisons(fit_att)"
+  ) +
+  theme_minimal(base_size = 13) +
+  theme(
+    plot.title = element_text(face = "bold", family = "Times New Roman", size = 16, hjust = 0.5),
+    plot.subtitle = element_text(size = 12, hjust = 0.5),
+    plot.caption = element_text(size = 9, hjust = 0),
+    axis.text.x = element_text(size = 12),
+    axis.title.y = element_text(margin = margin(r = 10))
+  )
+```
+
+## Conclusion
+Attitudes toward immigration are an increasingly important part of US congressional elections. Using data from a experiment among Boston commuters, we aim to explore the causal effect of exposure to Spanish speakers on attitudes toward immigration among registered voters in Georgia today. A potential weakness in our model is that the data is based off of Boston commuters, but our target population is all registered voters, not just those who commute by train. Thus, there is a lack of representativeness between our data and the population. We model attitudes toward immigration based on the treatment of exposure to Spanish-speaking individuals as a linear function of their non-treated attitudes. Our quantity of interest was the causal effect of attitude towards immigration between the treatment of exposure to Spanish-speakers and no exposure, and our model predicted the causal effect to be 1.55. Our 95% confidence interval for this value was between 0.51 and 2.58. The quantity of interest and its uncertainty could be wrong because the data we have is about attitude toward immigration, but it does not 100% correlate with voting behavior. Thus, the causal effect could actually not matter for our true purpose with this study.
