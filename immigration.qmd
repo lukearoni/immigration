@@ -1,0 +1,16 @@
+---
+title: "Immigration"
+format: html
+author: Luke Li
+execute: 
+  echo: false
+---
+
+Attitudes toward immigration are an increasingly important part of US congressional elections. Using data from a experiment among Boston commuters, we aim to explore the causal effect of exposure to Spanish speakers on attitudes toward immigration among registered voters in Georgia today.
+
+
+```{r}
+#| message: false
+library(tidyverse)
+library(primer.data)
+```
